@@ -13,6 +13,8 @@
 		1989ED72225BA55300A1E2FC /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 1989ED71225BA55300A1E2FC /* LICENSE.md */; };
 		1989ED74225BA5ED00A1E2FC /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989ED73225BA5ED00A1E2FC /* DesignableView.swift */; };
 		19AE0F10225BC92700E6ACBB /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AE0F0F225BC92700E6ACBB /* NSObject+ClassName.swift */; };
+		19E231F3225CC68900510344 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E231F2225CC68900510344 /* DesignableButton.swift */; };
+		19E231F5225CC91F00510344 /* UIAlertController+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E231F4225CC91F00510344 /* UIAlertController+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		1989ED71225BA55300A1E2FC /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		1989ED73225BA5ED00A1E2FC /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		19AE0F0F225BC92700E6ACBB /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
+		19E231F2225CC68900510344 /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		19E231F4225CC91F00510344 /* UIAlertController+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +65,10 @@
 			children = (
 				1989ED56225BA4E900A1E2FC /* iOS_Utils.h */,
 				1989ED57225BA4E900A1E2FC /* Info.plist */,
+				19E231F2225CC68900510344 /* DesignableButton.swift */,
 				1989ED73225BA5ED00A1E2FC /* DesignableView.swift */,
 				19AE0F0F225BC92700E6ACBB /* NSObject+ClassName.swift */,
+				19E231F4225CC91F00510344 /* UIAlertController+Convenience.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -189,8 +195,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E231F5225CC91F00510344 /* UIAlertController+Convenience.swift in Sources */,
 				1989ED74225BA5ED00A1E2FC /* DesignableView.swift in Sources */,
 				19AE0F10225BC92700E6ACBB /* NSObject+ClassName.swift in Sources */,
+				19E231F3225CC68900510344 /* DesignableButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
