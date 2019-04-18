@@ -13,8 +13,9 @@ The purpose of iOS-Utils is to bring together a bunch of useful utility classes,
 - [CocoaPods](#cocoapods)
 - [Carthage](#carthage)
 - [Utilities](#utilities)
-- [DesignableView & DesignableButton](#designableview-&-designablebutton)
-- [UIAlertController+Convenience](#uialertcontroller+convenience)
+- [DesignableView & DesignableButton](#designableview-designablebutton)
+- [UIAlertController+Convenience](#uialertcontrollerconvenience)
+- [UIAlertcontroller+UIWindow](#uialertcontrolleruiwindow)
 - [ClassName](#classname)
 
 ## Requirements
@@ -32,7 +33,7 @@ The purpose of iOS-Utils is to bring together a bunch of useful utility classes,
 To integrate iOS-Utils into your Xcode project using CocoaPods, add the following to your Podfile:
 
 ```ruby
-pod 'iOS-Utils', '~> 1.1'
+pod 'iOS-Utils', '~> 1.2'
 ```
 
 ## Utilities
@@ -61,18 +62,18 @@ IBInspectable properties:
 
 ### UIAlertController+Convenience
 
-UIAlertController+Convenience is a lightweight extension for UIAlertController that allows for easier creation of UIAlertControllers while also making it a bit easier to read.
+UIAlertController+Convenience is an extension for UIAlertController that allows for easier creation of UIAlertControllers while also making it a bit easier to read.
 
 #### Standard UIAlertController creation:
 
 ```swift
 let alert = UIAlertController(title: "title", message: "message", preferredStyle: .alert)
 
-let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { _ in
-// OK pressed
+let okAction = UIAlertAction(title: "Okay", style: .default, handler: { _ in
+// Okay pressed
 })
 
-let cancelAction = UIAlertController(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: { _ in
+let cancelAction = UIAlertController(title: "Cancel", style: .cancel, handler: { _ in
 // Cancel pressed
 })
 
@@ -83,30 +84,55 @@ alert.addAction(cancelAction)
 #### Convenience UIAlertController creation:
 
 ```swift
-let newAlert = UIAlertController(title: "title",
-                                 message: "message",
-                                 alertActions: [
-                                     .ok({ _ in
-                                         // Ok pressed
-                                     }),
-                                     .cancel({ _ in
-                                         // Cancel pressed
-                                     }),
-])
+let alert = UIAlertController(title: "title",
+                              message: "message",
+                              preferredStyle: .alert,
+                              alertActions: [
+                                  .okay({ _ in
+                                      // Okay Pressed
+                                  }),
+                                  .cancel({ _ in
+                                      // Cancel Pressed
+                                  }),
+                              ])
 ```
 
 or
 
 ```swift
-let okAction = AlertAction.ok({ _ in
-// Ok pressed
+let okAction: AlertAction = .okay({ _ in
+    // Okay pressed
 })
 
-let cancelAction = AlertAction.cancel({ _ in
-// Cancel pressed
+let cancelAction: AlertAction = .cancel({ _ in
+    // Cancel pressed
 })
 
-let alert = UIAlertController(title: "title", message: "message", alertActions: [okAction, cancelAction])
+let alert = UIAlertController(title: "title", message: "message", preferredStyle: .alert, alertActions: [okAction, cancelAction])
+```
+
+### UIAlertController+UIWindow
+
+UIAlertController+UIWindow is an extension for UIAlertController that allows for the presentation of UIAlertControllers similar to how UIAlertView used to work. With this implementation, it is possible to present an alert from anywhere as a UIViewController (or subclass of) is not required. A separate UIWindow is created on invocation, and the alert is presented in that window. When the alert is dismissed, the application's window is set back to the key window.
+
+UIAlertController+UIWindow works with UIAlertController's with a preferred style of .alert and .actionSheet.
+
+```swift
+// Convenience initializer from UIAlertController+Convenience.swift
+let alert = UIAlertController(title: "title",
+                              message: "message",
+                              preferredStyle: .alert,
+                              alertActions: [
+                                  .okay({ _ in
+                                      // Okay Pressed
+                                  }),
+                                  .cancel({ _ in
+                                      // Cancel Pressed
+                                  }),
+                              ])
+])
+
+alert.show() // Shows the alert
 ```
 
 ### ClassName
