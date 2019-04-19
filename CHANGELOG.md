@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1
+
+- Migrated from `GitLab` to `GitHub`
+
 ## 1.2.0
 
 - Added `UIAlertController+UIWindow.swift`

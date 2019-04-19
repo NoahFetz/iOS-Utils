@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
     s.name = 'iOS-Utils'
-    s.version = '1.2.0'
+    s.version = '1.2.1'
     s.summary = 'A set of convenient iOS utilities'
-    s.homepage = 'https://gitlab.com/_arkdev/ios-utils'
+    s.homepage = 'https://github.com/ark-develop/iOS-Utils'
     s.license = {:type => 'MIT', :file => 'LICENSE.md'}
-    s.author = '_arkdev'
-    s.source = { :git => 'https://gitlab.com/_arkdev/ios-utils.git', :tag => s.version.to_s }
+    s.author = 'ark-develop'
+    s.source = { :git => 'https://github.com/ark-develop/iOS-Utils.git', :tag => s.version.to_s }
 
     s.ios.deployment_target = '11.0'
     s.swift_version = '5.0'
