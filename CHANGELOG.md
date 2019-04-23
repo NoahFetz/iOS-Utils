@@ -1,24 +1,56 @@
 # Changelog
 
-## 1.2.1
+## 1.3.0 (Keyboard Utils)
 
-- Migrated from `GitLab` to `GitHub`
+### Added
 
-## 1.2.0
+- [KeyboardNotificationInfo](./Source/KeyboardNotificationInfo.swift)
+- [KeyboardObservable](./Source/KeyboardObservable.swift)
+- [KeyboardRespondable](./Source/KeyboardRespondable.swift)
 
-- Added `UIAlertController+UIWindow.swift`
-- Updated the `.ok` case from `UIAlertController+Convenience.swift` to `.okay`
+### Updated
 
-## 1.1.1
+- [README.md](./README.md)
+- [CHANGELOG.md](./CHANGELOG.md)
 
-- Added `CHANGELOG.md`
+## 1.2.1 (GitHub Migration)
 
-## 1.1.0
+### Updated
 
-- Added `DesignableButton.swift`
-- Added `UIAlertController+Convenience.swift`
+- Migrated source code from `GitLab` to `GitHub`
+- [CHANGELOG.md](./CHANGELOG.md)
 
-## 1.0.0
+## 1.2.0 (UIAlertController+UIWindow)
 
-- Added `DesignableView.swift`
-- Added `NSObject+ClassName.swift`
+### Added
+
+- [UIAlertController+UIWindow.swift](./Source/UIAlertController+UIWindow.swift)
+
+### Updated
+
+- [UIAlertController+Convenience.swift](UIAlertController+Convenience.swift)
+- Changed the `.ok` case to `.okay` to comply with SwiftLint rule `identifier_name`
+
+## 1.1.1 (CHANGELOG.md)
+
+### Added
+
+- [CHANGELOG.md](./CHANGELOG.md)
+
+## 1.1.0 (DesignableButton & UIAlertController+Convenience)
+
+### Added
+
+- [DesignableButton.swift](./Source/DesignableButton.swift)
+- [UIAlertController+Convenience.swift](UIAlertController+Convenience.swift)
+
+### Updated
+
+- [README.md](./README.md)
+
+## 1.0.0 (iOS-Utils)
+
+### Added
+
+- [DesignableView.swift](./Source/DesignableView.swift)
+- [NSObject+ClassName.swift](./Source/NSObject+ClassName.swift)

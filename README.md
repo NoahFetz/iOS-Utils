@@ -10,13 +10,16 @@ The purpose of iOS-Utils is to bring together a bunch of useful utility classes,
 
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [CocoaPods](#cocoapods)
-- [Carthage](#carthage)
+    - [CocoaPods](#cocoapods)
+    - [Carthage](#carthage)
 - [Utilities](#utilities)
-- [DesignableView & DesignableButton](#designableview-designablebutton)
-- [UIAlertController+Convenience](#uialertcontrollerconvenience)
-- [UIAlertcontroller+UIWindow](#uialertcontrolleruiwindow)
-- [ClassName](#classname)
+    - [DesignableView & DesignableButton](#designableview--designablebutton)
+    - [UIAlertController+Convenience](#uialertcontrollerconvenience)
+    - [UIAlertcontroller+UIWindow](#uialertcontrolleruiwindow)
+    - [KeyboardNotificationInfo](#keyboardnotificationinfo)
+    - [KeyboardObservable](#keyboardobservable)
+    - [KeyboardRespondable](#keyboardrespondable)
+    - [ClassName](#classname)
 
 ## Requirements
 
@@ -33,7 +36,17 @@ The purpose of iOS-Utils is to bring together a bunch of useful utility classes,
 To integrate iOS-Utils into your Xcode project using CocoaPods, add the following to your Podfile:
 
 ```ruby
-pod 'iOS-Utils', '~> 1.2'
+pod 'iOS-Utils', '~> 1.3'
+```
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a dependency manager for Cocoa applications that provides binary frameworks while allowing full control over project structure and setup.
+
+To integrate iOS-Utils into your Xcode project using Carthage, create a Cartfile and add the following:
+
+```ruby
+github "ark-develop/iOS-Utils" ~> 1.3
 ```
 
 ## Utilities
@@ -134,6 +147,54 @@ let alert = UIAlertController(title: "title",
 
 alert.show() // Shows the alert
 ```
+
+### KeyboardNotificationInfo
+
+KeyboardNotificationInfo is a data model for the Notification Object that is sent when responding to keyboard events.
+
+Notification Properties:
+
+- animationDuration (TimeInterval)
+- animationOptions (UIView.AnimationOptions?)
+- beginFrame (CGRect)
+- endFrame (CGRect)
+- isLocalUser (Bool)
+
+### KeyboardObservable
+
+KeyboardObservable is a protocol that adds functions to register/un-register from keyboard notifications. Additionally, it exposes the functions that are called when those events fire.
+
+```swift
+class FooViewController: UIViewController, KeyboardObservable {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        registerForKeyboardEvents()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unregisterForKeyboardEvents()
+    }
+
+    func keyboardWillShow(_ notification: Notification) {
+        // notification is the Notification object containing the keyboard information
+    }
+
+    func keyboardWillHide(_ notification: Notification) {
+        // notification is the Notification object containing the keyboard information
+    }
+}
+```
+
+### KeyboardRespondable
+
+KeyboardRespondable extends KeyboardObservable slightly, by adding automatic handling of a view's content inset.
+
+The protocol requires a `contentView` that conforms to `ContentInsetAdjustable` whose only requirement is the conformer must have a mutable `contentInset` property.
+
+KeyboardRespondable will automatically adjust the content insets of the `contentView` when the keyboard shows and hides based on the amount of overlap of the keyboard and the `contentView`.
+
+_**NOTE:** If the `keyboardWillShow(_:)` and/or `keyboardWillHide(_:)` functions are added in in the view controller implementation, the scroll view will not automatically adjust its insets correctly._
 
 ### ClassName
 

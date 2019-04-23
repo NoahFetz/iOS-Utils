@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'iOS-Utils'
-    s.version = '1.2.1'
+    s.version = '1.3.0'
     s.summary = 'A set of convenient iOS utilities'
     s.homepage = 'https://github.com/ark-develop/iOS-Utils'
     s.license = {:type => 'MIT', :file => 'LICENSE.md'}

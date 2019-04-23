@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1912384F226F64C9008BAC8A /* KeyboardObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1912384E226F64C9008BAC8A /* KeyboardObservable.swift */; };
+		19123851226F64DE008BAC8A /* KeyboardRespondable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19123850226F64DE008BAC8A /* KeyboardRespondable.swift */; };
+		19123853226F6500008BAC8A /* KeyboardNotificationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19123852226F6500008BAC8A /* KeyboardNotificationInfo.swift */; };
 		19239414226127CE003EC3AF /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 19239413226127CE003EC3AF /* CHANGELOG.md */; };
 		1989ED64225BA4E900A1E2FC /* iOS_Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1989ED56225BA4E900A1E2FC /* iOS_Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1989ED6E225BA51C00A1E2FC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1989ED6D225BA51C00A1E2FC /* README.md */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1912384E226F64C9008BAC8A /* KeyboardObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObservable.swift; sourceTree = "<group>"; };
+		19123850226F64DE008BAC8A /* KeyboardRespondable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardRespondable.swift; sourceTree = "<group>"; };
+		19123852226F6500008BAC8A /* KeyboardNotificationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationInfo.swift; sourceTree = "<group>"; };
 		19239413226127CE003EC3AF /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		1989ED53225BA4E900A1E2FC /* iOS_Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOS_Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1989ED56225BA4E900A1E2FC /* iOS_Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_Utils.h; sourceTree = "<group>"; };
@@ -72,6 +78,9 @@
 				1989ED57225BA4E900A1E2FC /* Info.plist */,
 				19E231F2225CC68900510344 /* DesignableButton.swift */,
 				1989ED73225BA5ED00A1E2FC /* DesignableView.swift */,
+				19123852226F6500008BAC8A /* KeyboardNotificationInfo.swift */,
+				1912384E226F64C9008BAC8A /* KeyboardObservable.swift */,
+				19123850226F64DE008BAC8A /* KeyboardRespondable.swift */,
 				19AE0F0F225BC92700E6ACBB /* NSObject+ClassName.swift */,
 				19E231F4225CC91F00510344 /* UIAlertController+Convenience.swift */,
 				19E063122264C32800B062F2 /* UIAlertController+UIWindow.swift */,
@@ -204,7 +213,10 @@
 			files = (
 				19E231F5225CC91F00510344 /* UIAlertController+Convenience.swift in Sources */,
 				1989ED74225BA5ED00A1E2FC /* DesignableView.swift in Sources */,
+				19123851226F64DE008BAC8A /* KeyboardRespondable.swift in Sources */,
 				19AE0F10225BC92700E6ACBB /* NSObject+ClassName.swift in Sources */,
+				1912384F226F64C9008BAC8A /* KeyboardObservable.swift in Sources */,
+				19123853226F6500008BAC8A /* KeyboardNotificationInfo.swift in Sources */,
 				19E063132264C32800B062F2 /* UIAlertController+UIWindow.swift in Sources */,
 				19E231F3225CC68900510344 /* DesignableButton.swift in Sources */,
 			);
