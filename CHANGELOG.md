@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.4.0 (Sub Specs)
+
+### Added
+
+- The ability to specify specific sub specs to incorporate.
+
+### Updated
+
+- [KeyboardNotificationInfo](./Source/KeyboardNotificationInfo.swift)
+  - Code formatting
+- [KeyboardObservable](./Source/KeyboardObservable.swift)
+  - Code formatting
+- [KeyboardRespondable](./Source/KeyboardRespondable.swift)
+  - Code formatting
+
 ## 1.3.0 (Keyboard Utils)
 
 ### Added

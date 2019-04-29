@@ -20,12 +20,18 @@ public protocol KeyboardObservable: NSObjectProtocol {
 
 public extension KeyboardObservable {
     func registerForKeyboardEvents() {
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main, using: { [weak self] notification in
-            self?.keyboardWillShow(notification)
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification,
+                                               object: nil,
+                                               queue: .main,
+                                               using: { [weak self] notification in
+                                                   self?.keyboardWillShow(notification)
         })
 
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main, using: { [weak self] notification in
-            self?.keyboardWillHide(notification)
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification,
+                                               object: nil,
+                                               queue: .main,
+                                               using: { [weak self] notification in
+                                                   self?.keyboardWillHide(notification)
         })
     }
 

@@ -12,19 +12,27 @@ public struct KeyboardNotificationInfo {
     ///
     /// - Parameter notification: The Notification object sent when responding to keyboard events.
     public init?(notification: Notification) {
-        guard let animationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval,
+        guard let animationDuration =
+            notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval,
             let beginFrame = notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect,
             let endFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
             let isLocalUser = notification.userInfo?[UIResponder.keyboardIsLocalUserInfoKey] as? Bool else {
             return nil
         }
 
-        let animationOptions = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UIView.AnimationOptions
+        let animationOptions =
+            notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UIView.AnimationOptions
 
-        self.init(animationDuration: animationDuration, animationOptions: animationOptions, beginFrame: beginFrame, endFrame: endFrame, isLocalUser: isLocalUser)
+        self.init(animationDuration: animationDuration,
+                  animationOptions: animationOptions,
+                  beginFrame: beginFrame, endFrame:
+                  endFrame, isLocalUser: isLocalUser)
     }
 
-    private init(animationDuration: TimeInterval, animationOptions: UIView.AnimationOptions?, beginFrame: CGRect, endFrame: CGRect, isLocalUser: Bool) {
+    private init(animationDuration: TimeInterval,
+                 animationOptions: UIView.AnimationOptions?,
+                 beginFrame: CGRect, endFrame: CGRect,
+                 isLocalUser: Bool) {
         self.animationDuration = animationDuration
         self.animationOptions = animationOptions
         self.beginFrame = beginFrame
