@@ -7,10 +7,8 @@ public protocol ContentInsetAdjustable where Self: UIView {
 extension UIScrollView: ContentInsetAdjustable {}
 
 public protocol KeyboardRespondable: KeyboardObservable {
-    associatedtype ContentViewType: ContentInsetAdjustable
-
-    /// The scroll view that should respond to keyboard frame changes
-    var contentView: ContentViewType? { get set }
+    /// The views that should respond to keyboard frame changes
+    var respondableViews: [ContentInsetAdjustable] { get }
 }
 
 public extension KeyboardRespondable {
@@ -31,19 +29,17 @@ public extension KeyboardRespondable {
     }
 
     private func updateScrollViewFrame(for keyboardFrame: CGRect) {
-        guard let contentView = self.contentView else {
-            return
-        }
+        respondableViews.forEach({ view in
+            let convertedViewFrame = view.superview?
+                .convert(view.frame, to: UIApplication.shared.keyWindow) ?? .zero
+            let viewMaxY = convertedViewFrame.maxY
+            let keyboardMinY = keyboardFrame.minY
+            let diff = max(0.0, viewMaxY - keyboardMinY)
 
-        let convertedContentViewFrame =
-            contentView.superview?.convert(contentView.frame, to: UIApplication.shared.keyWindow) ?? .zero
-        let contentViewMaxY = convertedContentViewFrame.maxY
-        let keyboardMinY = keyboardFrame.minY
-        let diff = max(0.0, contentViewMaxY - keyboardMinY)
-
-        contentView.contentInset = UIEdgeInsets(top: contentView.contentInset.top,
-                                                left: contentView.contentInset.left,
-                                                bottom: diff,
-                                                right: contentView.contentInset.right)
+            view.contentInset = UIEdgeInsets(top: view.contentInset.top,
+                                             left: view.contentInset.left,
+                                             bottom: diff,
+                                             right: view.contentInset.right)
+        })
     }
 }

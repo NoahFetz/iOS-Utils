@@ -36,7 +36,7 @@ The purpose of iOS-Utils is to bring together a bunch of useful utility classes,
 To integrate iOS-Utils into your Xcode project using CocoaPods, add the following to your Podfile:
 
 ```ruby
-pod 'iOS-Utils', '~> 1.4'
+pod 'iOS-Utils', '~> 1.5'
 ```
 
 Because integrating the entire pod may be overkill, you can alternatively specify which sub specs you want to include.
@@ -50,13 +50,13 @@ Because integrating the entire pod may be overkill, you can alternatively specif
 To include one or more specific sub modules in you code, specify the dependencies in the Podfile as follows for each sub spec required:
 
 ```ruby
-pod 'iOS-Utils/{Sub Spec}', '~> 1.4'
+pod 'iOS-Utils/{Sub Spec}', '~> 1.5'
 ```
 
 For example, to include the Designable classes in your project, add the following to your Podfile:
 
 ```ruby
-pod 'iOS-Utils/Designable', '~> 1.4'
+pod 'iOS-Utils/Designable', '~> 1.5'
 ```
 
 ### Carthage
@@ -66,7 +66,7 @@ pod 'iOS-Utils/Designable', '~> 1.4'
 To integrate iOS-Utils into your Xcode project using Carthage, create a Cartfile and add the following:
 
 ```ruby
-github "ark-develop/iOS-Utils" ~> 1.4
+github "ark-develop/iOS-Utils" ~> 1.5
 ```
 
 ## Utilities
@@ -113,15 +113,21 @@ UIAlertController+Convenience is an extension for UIAlertController that allows 
 #### Standard UIAlertController creation:
 
 ```swift
-let alert = UIAlertController(title: "title", message: "message", preferredStyle: .alert)
+let alert = UIAlertController(title: "title",
+                              message: "message",
+                              preferredStyle: .alert)
 
-let okAction = UIAlertAction(title: "Okay", style: .default, handler: { _ in
-    // Okay pressed
-})
+let okAction = UIAlertAction(title: "Okay",
+                             style: .default,
+                             handler: { _ in
+                                // Okay pressed
+                             })
 
-let cancelAction = UIAlertController(title: "Cancel", style: .cancel, handler: { _ in
-    // Cancel pressed
-})
+let cancelAction = UIAlertController(title: "Cancel",
+                                     style: .cancel,
+                                     handler: { _ in
+                                        // Cancel pressed
+                                     })
 
 alert.addAction(okAction)
 alert.addAction(cancelAction)
@@ -139,7 +145,7 @@ let alert = UIAlertController(title: "title",
                                   }),
                                   .cancel({ _ in
                                       // Cancel Pressed
-                                  }),
+                                  })
                               ])
 ```
 
@@ -154,7 +160,13 @@ let cancelAction: AlertAction = .cancel({ _ in
     // Cancel pressed
 })
 
-let alert = UIAlertController(title: "title", message: "message", preferredStyle: .alert, alertActions: [okAction, cancelAction])
+let alert = UIAlertController(title: "title",
+                              message: "message",
+                              preferredStyle: .alert,
+                              alertActions: [
+                                  okAction,
+                                  cancelAction
+                              ])
 ```
 
 ### UIAlertController+UIWindow
@@ -174,9 +186,8 @@ let alert = UIAlertController(title: "title",
                                   }),
                                   .cancel({ _ in
                                       // Cancel Pressed
-                                  }),
+                                  })
                               ])
-])
 
 alert.show() // Shows the alert
 ```
@@ -225,13 +236,21 @@ _**NOTE:** Currently only the `UIResponder.keyboardWillShowNotification` and `UI
 
 KeyboardRespondable extends KeyboardObservable slightly, by adding automatic handling of a view's content inset.
 
-The protocol requires a `contentView` that conforms to `ContentInsetAdjustable` whose only requirement is the conformer must have a mutable `contentInset` property.
+The protocol requires a `respondableViews` array of `ContentInsetAdjustable` views whose only requirement are the conformer must have a mutable `contentInset` property.
 
-KeyboardRespondable will automatically adjust the content insets of the `contentView` when the keyboard shows and hides based on the amount of overlap of the keyboard and the `contentView`.
+KeyboardRespondable will automatically adjust the content insets of the `respondableViews` when the keyboard shows and hides based on the amount of overlap of the keyboard and the `respondableViews`.
 
 ```swift
 class FooViewController: UIViewController, KeyboardRespondable {
-    @IBOutlet private var contentView: UIScrollView!
+    @IBOutlet private var scrollViewOne: UIScrollView!
+    @IBOutlet private var scrollViewTwo: UIScrollView!
+
+    var respondableViews: [ContentInsetAdjustable] {
+        return [
+            scrollViewOne,
+            scrollViewTwo
+        ]
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
