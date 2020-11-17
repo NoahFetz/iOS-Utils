@@ -8,18 +8,22 @@
 
 The purpose of iOS-Utils is to bring together a bunch of useful utility classes, extensions, and protocols to make iOS development a little easier.
 
-- [Requirements](#requirements)
-- [Installation](#installation)
-  - [CocoaPods](#cocoapods)
-  - [Carthage](#carthage)
-- [Utilities](#utilities)
-  - [DesignableView & DesignableButton](#designableview--designablebutton)
-  - [ClassName](#classname)
-  - [UIAlertController+Convenience](#uialertcontrollerconvenience)
-  - [UIAlertcontroller+UIWindow](#uialertcontrolleruiwindow)
-  - [KeyboardNotificationInfo](#keyboardnotificationinfo)
-  - [KeyboardObservable](#keyboardobservable)
-  - [KeyboardRespondable](#keyboardrespondable)
+- [iOS-Utils](#ios-utils)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+    - [CocoaPods](#cocoapods)
+    - [Carthage](#carthage)
+    - [Swift Package Manager](#swift-package-manager)
+  - [Utilities](#utilities)
+    - [DesignableView & DesignableButton](#designableview--designablebutton)
+    - [ClassName](#classname)
+    - [UIAlertController+Convenience](#uialertcontrollerconvenience)
+      - [Standard UIAlertController creation:](#standard-uialertcontroller-creation)
+      - [Convenience UIAlertController creation:](#convenience-uialertcontroller-creation)
+    - [UIAlertController+UIWindow](#uialertcontrolleruiwindow)
+    - [KeyboardNotificationInfo](#keyboardnotificationinfo)
+    - [KeyboardObservable](#keyboardobservable)
+    - [KeyboardRespondable](#keyboardrespondable)
 
 ## Requirements
 
@@ -36,7 +40,7 @@ The purpose of iOS-Utils is to bring together a bunch of useful utility classes,
 To integrate iOS-Utils into your Xcode project using CocoaPods, add the following to your Podfile:
 
 ```ruby
-pod 'iOS-Utils', '~> 1.5'
+pod 'iOS-Utils', '~> 1.6'
 ```
 
 Because integrating the entire pod may be overkill, you can alternatively specify which sub specs you want to include.
@@ -50,13 +54,13 @@ Because integrating the entire pod may be overkill, you can alternatively specif
 To include one or more specific sub modules in you code, specify the dependencies in the Podfile as follows for each sub spec required:
 
 ```ruby
-pod 'iOS-Utils/{Sub Spec}', '~> 1.5'
+pod 'iOS-Utils/{Sub Spec}', '~> 1.6'
 ```
 
 For example, to include the Designable classes in your project, add the following to your Podfile:
 
 ```ruby
-pod 'iOS-Utils/Designable', '~> 1.5'
+pod 'iOS-Utils/Designable', '~> 1.6'
 ```
 
 ### Carthage
@@ -66,7 +70,19 @@ pod 'iOS-Utils/Designable', '~> 1.5'
 To integrate iOS-Utils into your Xcode project using Carthage, create a Cartfile and add the following:
 
 ```ruby
-github "ark-develop/iOS-Utils" ~> 1.5
+github "ark-develop/iOS-Utils" ~> 1.6
+```
+
+### Swift Package Manager
+
+The [Swift Package Manager](https://www.swift.org/package-manager) is a tool for managing the distribution of Swift code.
+
+To integrate iOS-Utils into your Xcode project using Swift Package Manager, add it as a dependancy:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/ark-develop/iOS-Utils.git", .upToNextMajor(from: "1.6.0"))
+]
 ```
 
 ## Utilities

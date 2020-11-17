@@ -1,3 +1,5 @@
+#if canImport(UIKit)
+
 import UIKit
 
 public protocol ContentInsetAdjustable where Self: UIView {
@@ -29,17 +31,23 @@ public extension KeyboardRespondable {
     }
 
     private func updateScrollViewFrame(for keyboardFrame: CGRect) {
-        respondableViews.forEach({ view in
-            let convertedViewFrame = view.superview?
-                .convert(view.frame, to: UIApplication.shared.keyWindow) ?? .zero
+        respondableViews.forEach { view in
+            let convertedViewFrame = view.superview?.convert(
+                view.frame,
+                to: UIApplication.shared.currentWindow
+            ) ?? .zero
+
             let viewMaxY = convertedViewFrame.maxY
             let keyboardMinY = keyboardFrame.minY
+
             let diff = max(0.0, viewMaxY - keyboardMinY)
 
             view.contentInset = UIEdgeInsets(top: view.contentInset.top,
                                              left: view.contentInset.left,
                                              bottom: diff,
                                              right: view.contentInset.right)
-        })
+        }
     }
 }
+
+#endif

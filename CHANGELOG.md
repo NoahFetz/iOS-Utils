@@ -1,12 +1,25 @@
 # Changelog
 
+## 1.6.0 (Swift Package Manager)
+
+### Updated
+
+- Restructured the source to add support for Swift Package Manager
+
+### Added
+
+- [UIApplication+UIWindow.swift](./Sources/iOS&#32;Utils/UIApplication+UIWindow.swift)
+    - Computed variable for getting the current window since `keyWindow` was deprecated in iOS 13.0
+- [README.md](./README.md)
+- [CHANGELOG.md](./CHANGELOG.md)
+
 ## 1.5.1 (Designable View Highlighting)
 
 ### Updated
 
-- [DesignableButton](./Source/DesignableButton.swift)
+- [DesignableButton](./Sources/iOS&#32;Utils/DesignableButton.swift)
     - Code formatting
-- [DesignableView](./Source/DesignableView.swift)
+- [DesignableView](./Sources/iOS&#32;Utils/DesignableView.swift)
     - Code formatting
     - Added the ability to set the highlight alpha and specify what views, if any, should be highlighted.
 - [README.md](./README.md)
@@ -17,11 +30,11 @@
 ### Updated
 
 - Recompiled the library for Xcode 11 and iOS 13
-- [KeyboardObservable](./Source/KeyboardObservable.swift)
+- [KeyboardObservable](./Sources/iOS&#32;Utils/KeyboardObservable.swift)
   - Code formatting
-- [KeyboardRespondable](./Source/KeyboardRespondable.swift)
+- [KeyboardRespondable](./Sources/iOS&#32;Utils/KeyboardRespondable.swift)
   - Added the ability to define multiple `ContentInsetAdjustable` views to respond to the keyboard.
-- [UIAlertController+Convenience.swift](UIAlertController+Convenience.swift)
+- [UIAlertController+Convenience.swift](./Sources/iOS&#32;Utils/UIAlertController+Convenience.swift)
   - Added an additional convenience initializer
   - Updated the nullability of some convenience initializer parameters
 - [README.md](./README.md)
@@ -35,11 +48,11 @@
 
 ### Updated
 
-- [KeyboardNotificationInfo](./Source/KeyboardNotificationInfo.swift)
+- [KeyboardNotificationInfo](./Sources/iOS&#32;Utils/KeyboardNotificationInfo.swift)
   - Code formatting
-- [KeyboardObservable](./Source/KeyboardObservable.swift)
+- [KeyboardObservable](./Sources/iOS&#32;Utils/KeyboardObservable.swift)
   - Code formatting
-- [KeyboardRespondable](./Source/KeyboardRespondable.swift)
+- [KeyboardRespondable](./Sources/iOS&#32;Utils/KeyboardRespondable.swift)
   - Code formatting
 - [README.md](./README.md)
 - [CHANGELOG.md](./CHANGELOG.md)
@@ -48,9 +61,9 @@
 
 ### Added
 
-- [KeyboardNotificationInfo](./Source/KeyboardNotificationInfo.swift)
-- [KeyboardObservable](./Source/KeyboardObservable.swift)
-- [KeyboardRespondable](./Source/KeyboardRespondable.swift)
+- [KeyboardNotificationInfo](./Sources/iOS&#32;Utils/KeyboardNotificationInfo.swift)
+- [KeyboardObservable](./Sources/iOS&#32;Utils/KeyboardObservable.swift)
+- [KeyboardRespondable](./Sources/iOS&#32;Utils/KeyboardRespondable.swift)
 
 ### Updated
 
@@ -68,11 +81,11 @@
 
 ### Added
 
-- [UIAlertController+UIWindow.swift](./Source/UIAlertController+UIWindow.swift)
+- [UIAlertController+UIWindow.swift](./Sources/iOS&#32;Utils/UIAlertController+UIWindow.swift)
 
 ### Updated
 
-- [UIAlertController+Convenience.swift](UIAlertController+Convenience.swift)
+- [UIAlertController+Convenience.swift](./Sources/iOS&#32;Utils/UIAlertController+Convenience.swift)
   - Changed the `.ok` case to `.okay` to comply with SwiftLint rule `identifier_name`
 - [README.md](./README.md)
 - [CHANGELOG.md](./CHANGELOG.md)
@@ -87,8 +100,8 @@
 
 ### Added
 
-- [DesignableButton.swift](./Source/DesignableButton.swift)
-- [UIAlertController+Convenience.swift](UIAlertController+Convenience.swift)
+- [DesignableButton.swift](./Sources/iOS&#32;Utils/DesignableButton.swift)
+- [UIAlertController+Convenience.swift](./Sources/iOS&#32;Utils/UIAlertController+Convenience.swift)
 
 ### Updated
 
@@ -98,5 +111,5 @@
 
 ### Added
 
-- [DesignableView.swift](./Source/DesignableView.swift)
-- [NSObject+ClassName.swift](./Source/NSObject+ClassName.swift)
+- [DesignableView.swift](./Sources/iOS&#32;Utils/DesignableView.swift)
+- [NSObject+ClassName.swift](./Sources/iOS&#32;Utils/NSObject+ClassName.swift)

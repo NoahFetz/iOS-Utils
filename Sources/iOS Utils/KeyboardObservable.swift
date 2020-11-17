@@ -1,3 +1,5 @@
+#if canImport(UIKit)
+
 import UIKit
 
 public protocol KeyboardObservable: NSObjectProtocol {
@@ -45,3 +47,5 @@ public extension KeyboardObservable {
                                                   object: nil)
     }
 }
+
+#endif

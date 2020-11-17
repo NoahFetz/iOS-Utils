@@ -1,8 +1,10 @@
+#if canImport(UIKit)
+
 import UIKit
 
 @available(iOS 11.0, *)
 @IBDesignable
-open class DesignableView: UIControl {
+public class DesignableButton: UIButton {
     // MARK: - Corners
 
     @IBInspectable
@@ -148,28 +150,9 @@ open class DesignableView: UIControl {
         }
     }
 
-    // MARK: - Highlighting
-
-    @IBInspectable
-    open var highlightAlpha: CGFloat = 1.0
-
-    open var highlightViews: [UIView] {
-        []
-    }
-
-    override open var isHighlighted: Bool {
-        didSet {
-            if !highlightViews.isEmpty {
-                highlightViews.forEach { $0.alpha = isHighlighted ? highlightAlpha : 1.0 }
-            } else {
-                self.alpha = isHighlighted ? highlightAlpha : 1.0
-            }
-        }
-    }
-
     // MARK: - View
 
-    override open class var layerClass: AnyClass {
+    override public class var layerClass: AnyClass {
         return CAGradientLayer.self
     }
 
@@ -179,3 +162,5 @@ open class DesignableView: UIControl {
         layer.shouldRasterize = shadowColor != .clear && shadowOpacity != 0.0
     }
 }
+
+#endif

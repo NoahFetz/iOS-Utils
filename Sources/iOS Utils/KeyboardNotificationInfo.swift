@@ -1,3 +1,5 @@
+#if canImport(UIKit)
+
 import UIKit
 
 /// Data model for the Notification object sent when responding to keyboard events.
@@ -16,7 +18,8 @@ public struct KeyboardNotificationInfo {
             notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval,
             let beginFrame = notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect,
             let endFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
-            let isLocalUser = notification.userInfo?[UIResponder.keyboardIsLocalUserInfoKey] as? Bool else {
+            let isLocalUser = notification.userInfo?[UIResponder.keyboardIsLocalUserInfoKey] as? Bool
+        else {
             return nil
         }
 
@@ -40,3 +43,5 @@ public struct KeyboardNotificationInfo {
         self.isLocalUser = isLocalUser
     }
 }
+
+#endif

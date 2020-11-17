@@ -1,3 +1,5 @@
+#if canImport(UIKit)
+
 import UIKit
 
 public typealias AlertActionHandler = (UIAlertAction) -> Void
@@ -95,11 +97,14 @@ public extension UIAlertController {
         self.init(title: title, message: message, preferredStyle: preferredStyle)
 
         guard let alertActions = alertActions,
-            alertActions.count > 0 else {
+              alertActions.count > 0
+        else {
             addAction(AlertAction.okay(nil).alertAction)
             return
         }
 
-        alertActions.forEach({ addAction($0.alertAction) })
+        alertActions.forEach { addAction($0.alertAction) }
     }
 }
+
+#endif

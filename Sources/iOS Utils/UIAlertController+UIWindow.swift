@@ -1,3 +1,5 @@
+#if canImport(UIKit)
+
 import UIKit
 
 /// A private strong reference to the window so it does not automatically get deallocated after is is presented
@@ -10,20 +12,7 @@ public extension UIAlertController {
     ///   - animated: Whether or not to animate the presentation of the alert
     ///   - completion: Closure for when the presentation is complete
     func show(animated: Bool = true, completion: (() -> Void)? = nil) {
-        if #available(iOS 13.0, *) {
-            guard let windowScene = UIApplication.shared
-                .connectedScenes
-                .filter({ $0.activationState == .foregroundActive })
-                .first as? UIWindowScene else {
-                window = UIWindow(frame: UIScreen.main.bounds)
-                return
-            }
-
-            window = UIWindow(windowScene: windowScene)
-        } else {
-            window = UIWindow(frame: UIScreen.main.bounds)
-        }
-
+        window = UIApplication.shared.currentWindow ?? UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UIViewController()
         window?.windowLevel = UIWindow.Level.alert + 1
         window?.makeKeyAndVisible()
@@ -35,3 +24,5 @@ public extension UIAlertController {
         window = nil
     }
 }
+
+#endif
