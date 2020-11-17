@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.6.1 (tvOS Support)
+
+### Updated
+
+- Fixed an issue where the designables were not compiling correctly when included with Swift Package Manager due to tvOS support.
+- [DesignableButton](./Sources/iOS&#32;Utils/DesignableButton.swift)
+- [DesignableView](./Sources/iOS&#32;Utils/DesignableView.swift)
+- [KeyboardObservable](./Sources/iOS&#32;Utils/KeyboardObservable.swift)
+- [KeyboardRespondable](./Sources/iOS&#32;Utils/KeyboardRespondable.swift)
+- [KeyboardNotificationInfo](./Sources/iOS&#32;Utils/KeyboardNotificationInfo.swift)
+
 ## 1.6.0 (Swift Package Manager)
 
 ### Updated

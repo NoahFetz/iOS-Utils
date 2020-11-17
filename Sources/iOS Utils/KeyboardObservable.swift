@@ -1,7 +1,6 @@
-#if canImport(UIKit)
-
 import UIKit
 
+@available(tvOS, unavailable)
 public protocol KeyboardObservable: NSObjectProtocol {
     /// Function to register for keyboard events. Should be called in viewWillAppear.
     func registerForKeyboardEvents()
@@ -20,6 +19,7 @@ public protocol KeyboardObservable: NSObjectProtocol {
     func keyboardWillHide(_ notification: Notification)
 }
 
+@available(tvOS, unavailable)
 public extension KeyboardObservable {
     func registerForKeyboardEvents() {
         _ = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification,
@@ -47,5 +47,3 @@ public extension KeyboardObservable {
                                                   object: nil)
     }
 }
-
-#endif

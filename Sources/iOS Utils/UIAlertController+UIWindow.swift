@@ -1,5 +1,3 @@
-#if canImport(UIKit)
-
 import UIKit
 
 /// A private strong reference to the window so it does not automatically get deallocated after is is presented
@@ -24,5 +22,3 @@ public extension UIAlertController {
         window = nil
     }
 }
-
-#endif

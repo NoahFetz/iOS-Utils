@@ -1,8 +1,7 @@
-#if canImport(UIKit)
-
 import UIKit
 
 /// Data model for the Notification object sent when responding to keyboard events.
+@available(tvOS, unavailable)
 public struct KeyboardNotificationInfo {
     let animationDuration: TimeInterval
     let animationOptions: UIView.AnimationOptions?
@@ -43,5 +42,3 @@ public struct KeyboardNotificationInfo {
         self.isLocalUser = isLocalUser
     }
 }
-
-#endif

@@ -1,18 +1,20 @@
-#if canImport(UIKit)
-
 import UIKit
 
+@available(tvOS, unavailable)
 public protocol ContentInsetAdjustable where Self: UIView {
     var contentInset: UIEdgeInsets { get set }
 }
 
+@available(tvOS, unavailable)
 extension UIScrollView: ContentInsetAdjustable {}
 
+@available(tvOS, unavailable)
 public protocol KeyboardRespondable: KeyboardObservable {
     /// The views that should respond to keyboard frame changes
     var respondableViews: [ContentInsetAdjustable] { get }
 }
 
+@available(tvOS, unavailable)
 public extension KeyboardRespondable {
     func keyboardWillShow(_ notification: Notification) {
         guard let notificationInfo = KeyboardNotificationInfo(notification: notification) else {
@@ -49,5 +51,3 @@ public extension KeyboardRespondable {
         }
     }
 }
-
-#endif

@@ -10,7 +10,7 @@ let package = Package(
     products: [
         .library(
             name: "iOS Utils",
-            targets: ["iOS Utils"]),
+            targets: ["iOS Utils"])
     ],
     targets: [
         .target(

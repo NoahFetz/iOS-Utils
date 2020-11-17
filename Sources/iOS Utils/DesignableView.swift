@@ -1,10 +1,8 @@
-#if canImport(UIKit)
-
 import UIKit
 
-@available(iOS 11.0, *)
+@available(iOS 11.0, tvOS 11.0, *)
 @IBDesignable
-open class DesignableView: UIControl {
+public class DesignableView: UIControl {
     // MARK: - Corners
 
     @IBInspectable
@@ -181,5 +179,3 @@ open class DesignableView: UIControl {
         layer.shouldRasterize = shadowColor != .clear && shadowOpacity != 0.0
     }
 }
-
-#endif
