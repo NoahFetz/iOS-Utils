@@ -92,6 +92,7 @@ IBInspectable properties:
 - gradientStartPoint
 - gradientEndColor
 - gradientEndPoint
+- highlightAlpha (DesignableView only)
 
 ### ClassName
 

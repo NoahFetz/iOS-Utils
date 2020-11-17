@@ -2,8 +2,8 @@ import UIKit
 
 @available(iOS 11.0, *)
 @IBDesignable
-public class DesignableView: UIControl {
-    // MARK: Corners
+open class DesignableView: UIControl {
+    // MARK: - Corners
 
     @IBInspectable
     open var cornerRadius: CGFloat = 0.0 {
@@ -116,7 +116,7 @@ public class DesignableView: UIControl {
     }
 
     @IBInspectable
-    open var gradientStartPoint: CGPoint = CGPoint(x: 1.0, y: 1.0) {
+    open var gradientStartPoint = CGPoint(x: 0.5, y: 0.0) {
         didSet {
             guard let layer = layer as? CAGradientLayer else {
                 return
@@ -138,7 +138,7 @@ public class DesignableView: UIControl {
     }
 
     @IBInspectable
-    open var gradientEndPoint: CGPoint = CGPoint(x: 0.0, y: 1.0) {
+    open var gradientEndPoint = CGPoint(x: 0.5, y: 1.0) {
         didSet {
             guard let layer = layer as? CAGradientLayer else {
                 return
@@ -148,13 +148,32 @@ public class DesignableView: UIControl {
         }
     }
 
+    // MARK: - Highlighting
+
+    @IBInspectable
+    open var highlightAlpha: CGFloat = 1.0
+
+    open var highlightViews: [UIView] {
+        []
+    }
+
+    override open var isHighlighted: Bool {
+        didSet {
+            if !highlightViews.isEmpty {
+                highlightViews.forEach { $0.alpha = isHighlighted ? highlightAlpha : 1.0 }
+            } else {
+                self.alpha = isHighlighted ? highlightAlpha : 1.0
+            }
+        }
+    }
+
     // MARK: - View
 
-    public override class var layerClass: AnyClass {
+    override open class var layerClass: AnyClass {
         return CAGradientLayer.self
     }
 
-    public override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
 
         layer.shouldRasterize = shadowColor != .clear && shadowOpacity != 0.0

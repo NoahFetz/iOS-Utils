@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.5.1 (Designable View Highlighting)
+
+### Updated
+
+- [DesignableButton](./Source/DesignableButton.swift)
+    - Code formatting
+- [DesignableView](./Source/DesignableView.swift)
+    - Code formatting
+    - Added the ability to set the highlight alpha and specify what views, if any, should be highlighted.
+- [README.md](./README.md)
+- [CHANGELOG.md](./CHANGELOG.md)
+
 ## 1.5.0 (iOS 13 and Updates)
 
 ### Updated

@@ -3,7 +3,7 @@ import UIKit
 @available(iOS 11.0, *)
 @IBDesignable
 public class DesignableButton: UIButton {
-    // MARK: Corners
+    // MARK: - Corners
 
     @IBInspectable
     open var cornerRadius: CGFloat = 0.0 {
@@ -116,7 +116,7 @@ public class DesignableButton: UIButton {
     }
 
     @IBInspectable
-    open var gradientStartPoint: CGPoint = CGPoint(x: 1.0, y: 1.0) {
+    open var gradientStartPoint = CGPoint(x: 0.5, y: 0.0) {
         didSet {
             guard let layer = layer as? CAGradientLayer else {
                 return
@@ -138,7 +138,7 @@ public class DesignableButton: UIButton {
     }
 
     @IBInspectable
-    open var gradientEndPoint: CGPoint = CGPoint(x: 0.0, y: 1.0) {
+    open var gradientEndPoint = CGPoint(x: 0.5, y: 1.0) {
         didSet {
             guard let layer = layer as? CAGradientLayer else {
                 return
@@ -150,11 +150,11 @@ public class DesignableButton: UIButton {
 
     // MARK: - View
 
-    public override class var layerClass: AnyClass {
+    override public class var layerClass: AnyClass {
         return CAGradientLayer.self
     }
 
-    public override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
 
         layer.shouldRasterize = shadowColor != .clear && shadowOpacity != 0.0
