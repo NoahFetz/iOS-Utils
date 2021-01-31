@@ -1,3 +1,5 @@
+#if canImport(UIKit)
+
 import UIKit
 
 /// Data model for the Notification object sent when responding to keyboard events.
@@ -42,3 +44,5 @@ public struct KeyboardNotificationInfo {
         self.isLocalUser = isLocalUser
     }
 }
+
+#endif

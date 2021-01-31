@@ -81,7 +81,7 @@ To integrate iOS-Utils into your Xcode project using Swift Package Manager, add 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ark-develop/iOS-Utils.git", .upToNextMajor(from: "1.6.1"))
+    .package(url: "https://github.com/ark-develop/iOS-Utils.git", .upToNextMajor(from: "1.6.2"))
 ]
 ```
 

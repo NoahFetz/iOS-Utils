@@ -1,3 +1,5 @@
+#if canImport(UIKit)
+
 import UIKit
 
 @available(tvOS, unavailable)
@@ -51,3 +53,5 @@ public extension KeyboardRespondable {
         }
     }
 }
+
+#endif

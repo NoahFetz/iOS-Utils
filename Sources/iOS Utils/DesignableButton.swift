@@ -1,3 +1,5 @@
+#if canImport(UIKit)
+
 import UIKit
 
 @available(iOS 11.0, tvOS 11.0, *)
@@ -160,3 +162,5 @@ public class DesignableButton: UIButton {
         layer.shouldRasterize = shadowColor != .clear && shadowOpacity != 0.0
     }
 }
+
+#endif

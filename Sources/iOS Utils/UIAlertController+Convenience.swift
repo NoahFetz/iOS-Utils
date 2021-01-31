@@ -1,3 +1,5 @@
+#if canImport(UIKit)
+
 import UIKit
 
 public typealias AlertActionHandler = (UIAlertAction) -> Void
@@ -104,3 +106,5 @@ public extension UIAlertController {
         alertActions.forEach { addAction($0.alertAction) }
     }
 }
+
+#endif

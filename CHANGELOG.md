@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.6.2 (UIKit Fixes)
+
+### Updated
+
+- Fixed an issue where `swift build` was not completing properly due to macOS trying to import UIKit.
+- [DesignableButton](./Sources/iOS&#32;Utils/DesignableButton.swift)
+- [DesignableView](./Sources/iOS&#32;Utils/DesignableView.swift)
+- [KeyboardNotificationInfo](./Sources/iOS&#32;Utils/KeyboardNotificationInfo.swift)
+- [KeyboardObservable](./Sources/iOS&#32;Utils/KeyboardObservable.swift)
+- [KeyboardRespondable](./Sources/iOS&#32;Utils/KeyboardRespondable.swift)
+- [UIAlertController+Convenience.swift](./Sources/iOS&#32;Utils/UIAlertController+Convenience.swift)
+- [UIApplication+UIWindow.swift](./Sources/iOS&#32;Utils/UIApplication+UIWindow.swift)
+- [UIAlertController+UIWindow.swift](./Sources/iOS&#32;Utils/UIAlertController+UIWindow.swift)
+
 ## 1.6.1 (tvOS Support)
 
 ### Updated

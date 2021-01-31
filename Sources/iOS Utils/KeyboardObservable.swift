@@ -1,3 +1,5 @@
+#if canImport(UIKit)
+
 import UIKit
 
 @available(tvOS, unavailable)
@@ -47,3 +49,5 @@ public extension KeyboardObservable {
                                                   object: nil)
     }
 }
+
+#endif
